@@ -1,0 +1,24 @@
+{
+  "_help": "Server settings. Keep this file private (it is NOT served to browsers). Environment variables override it.",
+  "port": 8000,
+  "database_url": "postgresql://postgres:YOUR_PASSWORD@localhost:5432/care",
+  "timezone_hours": 8,
+  "admin_password": "",
+  "trust_proxy": false,
+  "email": {
+    "emailjs": {
+      "service_id": "",
+      "template_id": "",
+      "public_key": "",
+      "private_key": ""
+    },
+    "smtp": {
+      "host": "",
+      "port": 587,
+      "user": "",
+      "password": "",
+      "from": "",
+      "ssl": false
+    }
+  }
+}

@@ -1,0 +1,20 @@
+{
+  "accounts": [
+    {
+      "id": "U-001",
+      "name": "Karl Kenjie",
+      "first": "Karl",
+      "last": "Kenjie",
+      "user": "karlkenjie",
+      "role": "ADMIN",
+      "idno": "ADM-001",
+      "dept": "MIS Office",
+      "email": "kkenjie@ctu.edu.ph",
+      "status": "Active",
+      "last_in": "Never",
+      "made": "30 Oct 2026",
+      "salt": "care-adm-001",
+      "hash": "c71cef7741c6a985b2c12e255c1ffc288411cfc9f4d1da5569975482f8263e6c"
+    }
+  ]
+}

@@ -1,0 +1,22 @@
+/* =====================================================
+   BASE — mga kolor (variables), font ug reset
+   ===================================================== */
+
+  :root{
+    --navy:#0B2545;--blue:#133A6B;--prim:#1B5FA8;--primd:#14487F;
+    --gold:#C8A02E;--goldt:#6E5406;--goldb:#F7F0DC;
+    --red:#B3261E;--redb:#FBEDEC;--redl:#EFC9C6;
+    --grn:#1B5FA8;--grnb:#E8F0F9;--grnl:#C4D8EE;
+    --amb:#8A6D10;--ambb:#F7F0DC;--ambl:#E6D49B;
+    --ok:#15794F; --bg:#E9EEF5;--card:#fff;--head:#F4F7FA;--line:#D6DFEA;--line2:#E7ECF3;
+    --ink:#0B2545;--mut:#5B6B80;--mono:'IBM Plex Mono',ui-monospace,monospace;
+    box-sizing:border-box;
+  }
+
+  *{box-sizing:border-box}
+  html,body{margin:0;height:100%}
+  body{font-family:'IBM Plex Sans',system-ui,-apple-system,sans-serif;background:var(--bg);color:var(--ink);
+       font-size:14px;line-height:1.55;-webkit-font-smoothing:antialiased}
+  button,input,select,textarea{font-family:inherit;font-size:inherit;color:inherit}
+  h1,h2,h3{margin:0;letter-spacing:-.02em}
+  a{color:var(--prim);text-decoration:none}

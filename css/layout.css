@@ -1,0 +1,80 @@
+/* =====================================================
+   LAYOUT — sidebar, topbar, main nga area ug login nga panel
+   ===================================================== */
+
+  .tswitch{display:flex;align-items:center;justify-content:space-between;gap:10px;margin:0 6px 12px;
+           padding:9px 11px;border-radius:10px;background:rgba(255,255,255,.07);
+           border:1px solid rgba(255,255,255,.12);cursor:pointer}
+  .tswitch span{font-size:12.5px;font-weight:500;color:rgba(255,255,255,.80)}
+  .tswitch .tr{width:38px;height:21px;border-radius:999px;background:rgba(255,255,255,.22);position:relative;
+               flex:0 0 auto}
+  .tswitch .tr i{position:absolute;top:3px;left:3px;width:15px;height:15px;border-radius:50%;background:#fff;
+                 transition:left .16s ease}
+  html[data-theme="dark"] .tswitch .tr{background:var(--gold)}
+  html[data-theme="dark"] .tswitch .tr i{left:20px}
+  .whoclick{cursor:pointer;border-radius:10px;padding:8px 6px;margin:0 0 2px}
+  .whoclick:hover{background:rgba(255,255,255,.07)}
+
+  .shell{display:flex;min-height:100vh;
+         background:linear-gradient(90deg,var(--navy) 0 250px,var(--bg) 250px)}
+  .side{width:250px;flex:0 0 250px;background:var(--navy);color:#fff;display:flex;flex-direction:column;
+        padding:22px 14px 18px;align-self:stretch;min-height:100vh}
+  .brand{display:flex;gap:11px;align-items:flex-start;padding:0 6px}
+  .brand .w{font-size:22px;font-weight:700;letter-spacing:.22em;line-height:1}
+  .brand .s{font-size:10.5px;color:rgba(255,255,255,.66);line-height:1.35;margin-top:5px}
+  .brand .c{font-size:11px;color:var(--gold);font-weight:600;margin-top:4px}
+  .chip{display:inline-flex;align-items:center;gap:7px;padding:6px 11px;border-radius:7px;font-size:11px;
+        font-weight:700;letter-spacing:.07em;margin:18px 6px 16px;background:#C4D8EE;color:var(--navy)}
+  .nav{display:flex;flex-direction:column;gap:3px}
+  .nav a{position:relative;display:flex;align-items:center;gap:11px;padding:11px 12px 11px 15px;border-radius:9px;
+         font-size:13.5px;font-weight:500;color:rgba(255,255,255,.78);cursor:pointer}
+  .nav a:hover{background:rgba(255,255,255,.07)}
+  .nav a.on{background:#16406F;color:#fff;font-weight:600}
+  .nav a.on::before{content:"";position:absolute;left:0;top:9px;bottom:9px;width:3px;border-radius:0 3px 3px 0;
+                    background:var(--gold)}
+  .notice{background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.12);border-radius:10px;
+          padding:12px 13px;margin-top:auto}
+  .notice b{display:flex;align-items:center;gap:8px;color:var(--gold);font-size:12px}
+  .notice p{margin:6px 0 0;font-size:11px;line-height:1.5;color:rgba(255,255,255,.62)}
+  .foot{margin-top:auto}
+  .who{display:flex;align-items:center;gap:11px;padding:0 6px}
+  .sout{display:flex;flex-direction:column;align-items:center;gap:4px;margin-top:20px;padding:10px 0;
+         font-size:12.5px;color:rgba(255,255,255,.66);cursor:pointer}
+  .sout:hover{color:#fff}
+  .av{border-radius:9px;background:#16406F;color:#fff;display:inline-flex;align-items:center;
+      justify-content:center;font-weight:600;width:34px;height:34px;font-size:12.5px;flex:0 0 auto}
+  .who .n{font-size:12.5px;font-weight:600}
+  .who .r{font-size:11px;color:rgba(255,255,255,.6)}
+
+  .main{flex-grow:1;min-width:0;display:flex;flex-direction:column}
+  .top{background:#fff;border-bottom:1px solid var(--line);padding:16px 30px;display:flex;align-items:center;
+       justify-content:space-between;gap:16px;position:sticky;top:0;z-index:5}
+  .iback{width:34px;height:34px;flex:0 0 auto;border-radius:50%;border:1px solid var(--line);background:#fff;
+         color:#22415F;display:inline-flex;align-items:center;justify-content:center;cursor:pointer}
+  .iback:hover{border-color:var(--prim);color:var(--prim)}
+  .top h1{font-size:20px;font-weight:600}
+  .top p{margin:3px 0 0;font-size:12.5px;color:var(--mut)}
+  .body{padding:22px 30px 60px;display:flex;flex-direction:column;gap:16px;flex-grow:1}
+  .mnav{display:none}
+
+  .login{display:flex;min-height:100vh}
+  .login .l{width:54%;position:relative;color:#fff;padding:48px;display:flex;flex-direction:column;
+            background:var(--navy) url('../assets/images/login-bg.jpg') center/cover no-repeat}
+  .login .l::before{content:'';position:absolute;inset:0;
+     background:linear-gradient(105deg,rgba(11,37,69,.90) 0%,rgba(11,37,69,.72) 48%,rgba(11,37,69,.52) 100%)}
+  .login .l > *{position:relative;z-index:1}
+  .login .l h2{font-size:31px;font-weight:700;line-height:1.3;max-width:20ch}
+  .login .l h2 em{font-style:normal;color:var(--gold)}
+  .login .l p{font-size:14.5px;line-height:1.65;color:rgba(255,255,255,.74);max-width:44ch}
+  .login .l ul{list-style:none;padding:0;margin:26px 0 auto;display:flex;flex-direction:column;gap:11px}
+  .login .l li{display:flex;gap:11px;font-size:13.5px;color:rgba(255,255,255,.86)}
+  .login .r{flex-grow:1;background:#fff;display:flex;align-items:center;justify-content:center;padding:48px}
+  .login .box{width:100%;max-width:400px}
+  svg{flex:0 0 auto}
+
+/* PC: fixed ang sidebar (makita permi ang username ug Sign Out); ang content ra ang mo-scroll */
+@media (min-width:861px){
+  .shell{height:100vh;min-height:0;overflow:hidden}
+  .side{height:100vh;min-height:0;overflow-y:auto}
+  .main{height:100vh;overflow-y:auto}
+}

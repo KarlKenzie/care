@@ -1,0 +1,35 @@
+/* =====================================================
+   PORTAL — dugang nga style para sa SQRT / Clinic (body.portal)
+   ===================================================== */
+
+.chip.qrt{background:var(--gold);color:#3A2C05}
+.chip.clinic{background:#fff;color:var(--navy)}
+.btn:disabled{background:#E8EDF3;border-color:#E8EDF3;color:#8C9BAD;cursor:not-allowed}
+.portal .btn.ok{background:var(--grn);border-color:var(--grn);color:#fff}
+textarea.in{height:auto;min-height:88px;padding:11px 12px;line-height:1.55;resize:vertical}
+
+.prov{display:inline-flex;align-items:center;gap:7px;padding:5px 11px;border-radius:7px;font-size:11.5px;
+      font-weight:600;border:1px solid}
+.prov.v{background:var(--grnb);border-color:var(--grnl);color:var(--grn)}
+.prov.q{background:#E9F0FA;border-color:#C4D8EE;color:var(--primd)}
+.prov.a{background:var(--goldb);border-color:#EBCB7C;color:var(--goldt)}
+
+.tabs{display:flex;gap:6px;background:var(--bg);border:1px solid var(--line);border-radius:11px;padding:5px;
+      margin:18px 0 20px}
+.tabs button{flex-grow:1;padding:11px 8px;border-radius:8px;font-size:13.5px;font-weight:600;border:1px solid transparent;
+             background:transparent;color:#42566D;cursor:pointer}
+.tabs button.on{background:var(--prim);color:#fff;border-color:var(--prim)}
+
+tr.click{cursor:pointer}
+tr.click:hover td{background:#F4F7FA}
+.portal .filters{grid-template-columns:1.8fr 1fr 0.7fr 1fr 1fr}
+.portal .login .l h2{line-height:1.32;max-width:30ch}
+
+@media (prefers-reduced-motion:no-preference){
+  .portal .card,.portal .tw,.portal .empty{animation:in .18s ease both}
+  @keyframes in{from{opacity:0;transform:translateY(4px)}to{opacity:1;transform:none}}
+}
+@media (max-width:860px){
+  .portal .filters{grid-template-columns:1fr 1fr}
+  .portal table{min-width:560px}
+}

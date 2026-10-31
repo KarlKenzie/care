@@ -1,0 +1,48 @@
+/* =====================================================
+   DARK THEME — mga kolor kung naka-dark mode
+   ===================================================== */
+
+  html[data-theme="dark"]{
+    --bg:#0F1A27; --card:#172534; --head:#1C2C3E; --line:#2C3F55; --line2:#223346;
+    --ink:#EAF1F8; --mut:#A4B6C9;
+    --redb:#3A1E1D; --redl:#7A3832; --red:#F08A7E;
+    --ambb:#392E13; --ambl:#7A6428; --amb:#EFC86E; --goldb:#392E13; --goldt:#EFC86E;
+    --grnb:#17304A; --grnl:#33587F; --grn:#8CC3F5; --primd:#9CCBF8;
+    --infb:#17304A; --infl:#33587F;
+  }
+  html[data-theme="dark"] .bdg.rev,
+  html[data-theme="dark"] .prov.q,
+  html[data-theme="dark"] .note.info{background:var(--infb);border-color:var(--infl);color:var(--primd)}
+  html[data-theme="dark"] .prov.a{border-color:var(--ambl)}
+  html[data-theme="dark"] .bdg.ok,
+  html[data-theme="dark"] .prov.v{background:#153626;border-color:#2F6244;color:#76D3A2}
+  html[data-theme="dark"] .btn.out{background:var(--card);color:#D3E2F2;border-color:var(--line)}
+  html[data-theme="dark"] .btn.sec{background:#1D3A57;color:#D3E2F2;border-color:#33587F}
+  html[data-theme="dark"] .in{background:var(--card);color:var(--ink);border-color:var(--line)}
+  html[data-theme="dark"] .iback{background:var(--card);color:#D3E2F2;border-color:var(--line)}
+  html[data-theme="dark"] .empty{background:var(--card);border-color:var(--line)}
+  html[data-theme="dark"] .tabs{background:var(--bg);border-color:var(--line)}
+  html[data-theme="dark"] .tabs button{color:#AFC3D8}
+  html[data-theme="dark"] tr.click:hover td{background:#1D2E41}
+  html[data-theme="dark"] .top{background:var(--card);border-bottom-color:var(--line)}
+  html[data-theme="dark"] .top h1{color:var(--ink)}
+  html[data-theme="dark"] .tw{background:var(--card);border-color:var(--line)}
+  html[data-theme="dark"] .btn.dan{background:#C8352B;border-color:#C8352B;color:#fff}
+  html[data-theme="dark"] .card{border-color:var(--line)}
+  html[data-theme="dark"] .modal{background:var(--card)}
+  html[data-theme="dark"] .login .r{background:var(--bg)}
+  html[data-theme="dark"] .stage{background:var(--card)}
+
+  html[data-theme="dark"] .pwlist div.ok{color:#76D3A2}
+  html[data-theme="dark"] .bdg.off{background:#253448;border-color:#3A4D64;color:#C3D2E2}
+  html[data-theme="dark"] .role.admin{background:#17304A;border-color:#33587F;color:#9CCBF8}
+  html[data-theme="dark"] .role.clinic{background:#153626;border-color:#2F6244;color:#76D3A2}
+  html[data-theme="dark"] .role.sqrt{background:#392E13;border-color:#7A6428;color:#EFC86E}
+
+  html[data-theme="dark"] .tswitch .tr{background:var(--gold)}
+  html[data-theme="dark"] .tswitch .tr i{left:20px}
+
+/* Mobile nav sa dark mode */
+html[data-theme="dark"] .mnav{background:var(--card);border-top-color:var(--line)}
+html[data-theme="dark"] .mnav a{color:#AFC3D8}
+html[data-theme="dark"] .mnav a.on{color:#9CCBF8}
