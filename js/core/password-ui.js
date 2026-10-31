@@ -85,5 +85,53 @@ window.CARE = window.CARE || {};
     document.getElementById('pw0').focus();
   }
 
+  /* ---- SHOW / HIDE PASSWORD (eye button) ------------------------------------------------------
+     Every <input type="password"> on any screen (sign in, change password, ...) automatically gets an
+     eye button on its right. Click it to see what you typed; click again to hide it.
+     It also works for screens drawn later, because a MutationObserver watches the page. */
+  var EYE_ON  = '<path d="M2.6 12S6 5.8 12 5.8 21.4 12 21.4 12 18 18.2 12 18.2 2.6 12 2.6 12z"/><circle cx="12" cy="12" r="2.8"/>';
+  var EYE_OFF = EYE_ON + '<path d="M4 4l16 16"/>';
+  function eyeSvg(off) {
+    return '<svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" ' +
+           'stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">' + (off ? EYE_OFF : EYE_ON) + '</svg>';
+  }
+  function addEye(input) {
+    if (input.getAttribute('data-eye') || !input.parentNode) return;
+    input.setAttribute('data-eye', '1');
+    var hadFocus = document.activeElement === input;
+    var wrap = document.createElement('span');
+    wrap.className = 'pwwrap';
+    input.parentNode.insertBefore(wrap, input);
+    wrap.appendChild(input);
+    var btn = document.createElement('button');
+    btn.type = 'button';
+    btn.className = 'pweye';
+    btn.setAttribute('aria-label', 'Show password');
+    btn.setAttribute('title', 'Show password');
+    btn.innerHTML = eyeSvg(false);
+    btn.onmousedown = function (e) { e.preventDefault(); };          // keep the cursor in the box
+    btn.onclick = function (e) {
+      e.preventDefault(); e.stopPropagation();
+      var show = input.type === 'password';
+      input.type = show ? 'text' : 'password';
+      btn.innerHTML = eyeSvg(show);
+      var t = show ? 'Hide password' : 'Show password';
+      btn.setAttribute('aria-label', t); btn.setAttribute('title', t);
+      input.focus();
+    };
+    wrap.appendChild(btn);
+    if (hadFocus) input.focus();
+  }
+  function scanEyes(root) {
+    var list = (root.querySelectorAll ? root : document).querySelectorAll('input[type="password"]:not([data-eye])');
+    for (var i = 0; i < list.length; i++) addEye(list[i]);
+  }
+  function startEyes() {
+    scanEyes(document);
+    new MutationObserver(function () { scanEyes(document); })
+      .observe(document.documentElement, { childList: true, subtree: true });
+  }
+  if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', startEyes); else startEyes();
+
   CARE.pwUI = { checklist: checklist, wireLive: wireLive, modal: modal, wireModal: wireModal };
 })();
