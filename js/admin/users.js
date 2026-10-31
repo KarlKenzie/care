@@ -32,7 +32,7 @@
   function userFiltered(){
     var q=S.q.trim().toLowerCase();
     return U().filter(function(u){
-      if(q && (full(u)+' '+u.last+' '+u.user+' '+u.dept).toLowerCase().indexOf(q)===-1) return false;
+      if(q && (full(u)+' '+u.last+' '+u.user+' '+u.dept+' '+(u.idno||'')+' '+u.id).toLowerCase().indexOf(q)===-1) return false;
       if(S.role!=='All roles' && u.role!==S.role) return false;
       if(S.status!=='All statuses' && u.status!==S.status) return false;
       return true;
@@ -43,12 +43,13 @@
     if(!list.length) return '<div class="empty"><h3>No accounts found.</h3>'+
       '<p>Try a different search, or clear the filters.</p></div>';
     return '<p class="sm muted" style="margin:0 0 10px">Showing '+list.length+' of '+U().length+' accounts</p>'+
-      '<div class="tw"><table><thead><tr><th>Name</th><th>Username</th><th>Role</th><th>Department</th>'+
+      '<div class="tw"><table><thead><tr><th>Name</th><th>Department ID</th><th>Universal ID</th><th>Username</th><th>Role</th><th>Department</th>'+
       '<th>Status</th><th>Last sign-in</th><th></th></tr></thead><tbody>'+
       list.map(function(u){
         return '<tr><td><div style="display:flex;align-items:center;gap:10px">'+
           '<span class="av" style="width:32px;height:32px;background:var(--navy)">'+initials(u)+'</span>'+
           '<b>'+esc(u.last)+', '+esc(u.first)+'</b></div></td>'+
+          '<td class="mono sm">'+esc(u.idno||'—')+'</td><td class="mono sm">'+esc(u.id)+'</td>'+
           '<td class="mono sm">'+esc(u.user)+'</td><td>'+roleTag(u.role)+'</td>'+
           '<td class="sm">'+esc(u.dept)+'</td>'+
           '<td><span class="bdg '+(u.status==='Active'?'ok':'off')+'">'+esc(u.status)+'</span></td>'+
@@ -64,7 +65,7 @@
     function opts(a,c){ return a.map(function(o){return '<option'+(o===c?' selected':'')+'>'+o+'</option>';}).join(''); }
     return shell('User accounts','SQRT, Clinic and Administrator',
       '<div class="card"><div class="filters">'+
-        '<div class="wide"><label class="f" for="q">Search by name, username or department</label>'+
+        '<div class="wide"><label class="f" for="q">Search by name, username, department or ID</label>'+
           '<input class="in" id="q" type="search" placeholder="e.g. Fernandez or clinic." value="'+esc(S.q)+'"></div>'+
         '<div><label class="f" for="fr">Role</label><select class="in" id="fr">'+
           opts(['All roles','SQRT','CLINIC','ADMIN'],S.role)+'</select></div>'+
@@ -146,8 +147,8 @@
           '<span class="bdg '+(u.status==='Active'?'ok':'off')+'">'+esc(u.status)+'</span></div></div></div>'+
         '<div style="height:1px;background:var(--line2);margin:16px 0"></div>'+
         '<div class="grid g3">'+kv('Username',u.user,true)+kv('Email',u.email||'—')+kv('Department',u.dept)+
-          kv('Account ID',u.id,true)+kv('Last sign-in',u.last_in,true)+kv('Created',u.made,true)+
-          kv('Status',u.status)+'</div>'+
+          kv('Department ID',u.idno||'—',true)+kv('Universal ID',u.id,true)+kv('Last sign-in',u.last_in,true)+
+          kv('Created',u.made,true)+kv('Status',u.status)+'</div>'+
         '<div class="row" style="margin-top:20px;padding-top:16px;border-top:1px solid var(--line2)">'+
           '<button class="btn" data-edit="'+u.id+'">'+icon('edit',17,'#fff')+'Edit account</button>'+
           (u.id===S.me.id ? '' : u.status==='Active'
