@@ -65,3 +65,30 @@
   .note > span{flex:1 1 180px}
   .note .btn{width:auto;flex:0 0 auto;margin-left:0}
 }
+
+
+
+/* =====================================================
+   DESKTOP NGA GAMAY ANG WINDOW (861px–1400px) — User accounts nahimong card
+   kay 9 ka column, naputol kung dili kasud-an
+   ===================================================== */
+@media (min-width:861px) and (max-width:1400px){
+  .tw.tw-wide{overflow:visible !important;border:0 !important;background:transparent !important;border-radius:0}
+  .tw.tw-wide table{min-width:0 !important}
+  .tw.tw-wide table,.tw.tw-wide tbody,.tw.tw-wide tr,.tw.tw-wide td{display:block;width:100%}
+  .tw.tw-wide thead{display:none}
+  .tw.tw-wide tbody{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:14px}   /* daghang card matag linya */
+  .tw.tw-wide tr{background:var(--card);border:1px solid var(--line);border-radius:12px;
+                 padding:4px 14px;margin:0;box-shadow:0 1px 2px rgba(15,33,54,.07)}
+  .tw.tw-wide td{position:relative;padding:10px 0 10px 40%;min-height:40px;border-bottom:0;
+                 text-align:left;word-break:break-word}
+  .tw.tw-wide td + td{border-top:1px solid var(--line2)}
+  .tw.tw-wide td::before{content:attr(data-label);position:absolute;left:0;top:11px;width:36%;
+                         font-size:11.5px;font-weight:700;color:var(--mut);line-height:1.4}
+  .tw.tw-wide td:first-child,.tw.tw-wide td[data-label=""]{padding-left:0}
+  .tw.tw-wide td:first-child::before,.tw.tw-wide td[data-label=""]::before{display:none}
+  .tw.tw-wide td:first-child{font-size:14.5px}
+  .tw.tw-wide td:empty{display:none}
+  .tw.tw-wide td[data-label=""] > div{width:100%;justify-content:stretch !important}
+  .tw.tw-wide td[data-label=""] .btn{flex:1 1 0;width:auto}
+}

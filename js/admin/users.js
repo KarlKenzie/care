@@ -43,7 +43,7 @@
     if(!list.length) return '<div class="empty"><h3>No accounts found.</h3>'+
       '<p>Try a different search, or clear the filters.</p></div>';
     return '<p class="sm muted" style="margin:0 0 10px">Showing '+list.length+' of '+U().length+' accounts</p>'+
-      '<div class="tw"><table><thead><tr><th>Name</th><th>Department ID</th><th>Universal ID</th><th>Username</th><th>Role</th><th>Department</th>'+
+      '<div class="tw tw-wide"><table><thead><tr><th>Name</th><th>Department ID</th><th>Universal ID</th><th>Username</th><th>Role</th><th>Department</th>'+
       '<th>Status</th><th>Last sign-in</th><th></th></tr></thead><tbody>'+
       list.map(function(u){
         return '<tr><td><div style="display:flex;align-items:center;gap:10px">'+
