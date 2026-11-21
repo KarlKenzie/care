@@ -100,8 +100,8 @@
         '<div class="c">CTU – Consolacion Campus</div></div></div>' +
       '<span class="chip">' + icon('lock', 14) + 'ADMINISTRATOR</span>' +
       '<nav class="nav">' + nav + '</nav>' +
-      '<div class="foot"></div><div class="tswitch" id="themeswitch"><span>' +
-        (S.dark ? 'Dark mode' : 'Light mode') + '</span><span class="tr"><i></i></span></div>' +
+            '<div class="foot"></div><div class="tswitch" id="themeswitch"><span>' +
+        'Dark mode' + '</span><span class="tr"><i></i></span></div>' +
       '<div class="who whoclick" data-go="profile"><span class="av">' + initials() + '</span>' +
         '<div><div class="n">' + esc(u.name) + '</div>' +
         '<div class="r">Administrator · ' + esc(u.idno) + '</div></div>' +

@@ -15,7 +15,7 @@ function shell(title,sub,body,actions){
       '<div class="c">CTU – Consolacion Campus</div></div></div>'+
     '<span class="chip '+S.role+'">'+icon('shield',14)+(S.role==='qrt'?'SQRT RESPONDER':'CLINIC STAFF')+'</span>'+
     '<nav class="nav">'+nav+'</nav>'+
-    '<div class="foot"></div><div class="tswitch" id="themeswitch"><span>'+(S.dark?'Dark mode':'Light mode')+'</span>'+
+        '<div class="foot"></div><div class="tswitch" id="themeswitch"><span>Dark mode</span>'+
       '<span class="tr"><i></i></span></div>'+
     '<div class="who whoclick" data-go="profile"><span class="av">'+u.init+'</span>'+
       '<div><div class="n">'+esc(u.name)+'</div>'+
