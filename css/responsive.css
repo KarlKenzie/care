@@ -31,7 +31,7 @@
 /* =====================================================
    MOBILE LANG (640px paubos) — table nahimong card, ayo-ayo ang mga button
    ===================================================== */
-@media (max-width:640px){
+@media (max-width:860px){
 
   /* --- Table: walay horizontal scroll, matag row usa ka card --- */
   .tw{overflow:visible !important;border:0 !important;background:transparent !important;border-radius:0}
