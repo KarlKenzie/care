@@ -21,7 +21,7 @@ function qrtDashboard(){
       'placeholder="e.g. Santos or 2025-00124" style="flex:1 1 auto">'+
       '<button class="btn" id="qgo" style="flex:0 0 auto">'+icon('search',17,'#fff')+'Search</button></div></div>'+
 
-    '<div style="display:flex;align-items:center;justify-content:space-between;gap:16px;background:var(--redb);'+
+          '<div class="ctabar" style="display:flex;align-items:center;justify-content:space-between;gap:16px;background:var(--redb);'+
       'border:1px solid var(--redl);border-radius:12px;padding:18px 20px">'+
       '<div><div style="font-size:15px;font-weight:600">Responding now?</div>'+
       '<div class="sm muted" style="margin-top:2px">File a report quickly.</div></div>'+
@@ -29,7 +29,7 @@ function qrtDashboard(){
       'Quick report</button></div>'+
 
     (pending.length
-      ? '<div style="display:flex;align-items:center;justify-content:space-between;gap:16px;'+
+        ? '<div class="ctabar" style="display:flex;align-items:center;justify-content:space-between;gap:16px;'+
         'background:var(--ambb);border:1px solid var(--ambl);border-radius:12px;padding:18px 20px">'+
         '<div><div style="font-size:15px;font-weight:600">'+pending.length+' report'+
           (pending.length>1?'s':'')+' awaiting clinic review</div>'+

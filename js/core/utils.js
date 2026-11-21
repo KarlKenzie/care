@@ -44,6 +44,22 @@ window.CARE = window.CARE || {};
     if (m) m.scrollTop = 0;
   }
 
+    // Butangan og "data-label" ang matag cell gikan sa ulo sa table (gamiton sa mobile card)
+  function labelTables() {
+    document.querySelectorAll('.tw table').forEach(function (t) {
+      var heads = Array.prototype.map.call(t.querySelectorAll('thead th'), function (th) {
+        return th.textContent.trim();
+      });
+      t.querySelectorAll('tbody tr').forEach(function (tr) {
+        Array.prototype.forEach.call(tr.children, function (td, i) {
+          if (!td.hasAttribute('data-label')) td.setAttribute('data-label', heads[i] || '');
+        });
+      });
+    });
+  }
+  // Matag ma-render pag-usab o ma-filter ang table, i-label pag-usab (walay usbon sa ubang file)
+  new MutationObserver(labelTables).observe(document.body, { childList: true, subtree: true });
+
 
   /* ---- DUPLICATE-CLICK PROTECTION ------------------------------------------------------------
      CARE.once(name, button, fn): runs fn only if the same action is not already running.

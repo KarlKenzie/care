@@ -26,3 +26,42 @@
     .tw{overflow-x:auto} table{min-width:620px}
     .btn{width:100%} .row .btn{width:auto;flex-grow:1}
   }
+
+  
+/* =====================================================
+   MOBILE LANG (640px paubos) — table nahimong card, ayo-ayo ang mga button
+   ===================================================== */
+@media (max-width:640px){
+
+  /* --- Table: walay horizontal scroll, matag row usa ka card --- */
+  .tw{overflow:visible !important;border:0 !important;background:transparent !important;border-radius:0}
+  .tw table{min-width:0 !important}
+  .tw table,.tw tbody,.tw tr,.tw td{display:block;width:100%}
+  .tw thead{display:none}                       /* gitago ang ulo, ang label naa na sa matag cell */
+  .tw tr{background:var(--card);border:1px solid var(--line);border-radius:12px;
+         padding:4px 14px;margin-bottom:12px;box-shadow:0 1px 2px rgba(15,33,54,.07)}
+  .tw td{position:relative;padding:10px 0 10px 40%;min-height:40px;border-bottom:0;
+         text-align:left;word-break:break-word}
+  .tw td + td{border-top:1px solid var(--line2)}
+  .tw td::before{content:attr(data-label);position:absolute;left:0;top:11px;width:36%;
+                 font-size:11.5px;font-weight:700;color:var(--mut);line-height:1.4}
+  .tw td:first-child,.tw td[data-label=""]{padding-left:0}          /* ngalan + button: walay label */
+  .tw td:first-child::before,.tw td[data-label=""]::before{display:none}
+  .tw td:first-child{font-size:14.5px}
+  .tw td:empty{display:none}                                        /* walay sulod = wala ipakita */
+  .tw td[data-label=""] > div{width:100%;justify-content:stretch !important}
+  .tw td[data-label=""] .btn{flex:1 1 0;width:auto}
+  .tw td[data-label=""] > .btn{width:100%}
+
+  /* --- Dashboard bar (Responding now / Pending): button sa ilawom, dili mogawas --- */
+  .ctabar{flex-direction:column;align-items:stretch !important;gap:12px !important}
+  .ctabar .btn{width:100%}
+
+  /* --- Title + button sa card (Recent reports / View all): dili na i-100% --- */
+  .ct .btn{width:auto;flex:0 0 auto}
+
+  /* --- Note bar nga naay button (Clinic/Admin dashboard): mo-wrap na --- */
+  .note{flex-wrap:wrap}
+  .note > span{flex:1 1 180px}
+  .note .btn{width:auto;flex:0 0 auto;margin-left:0}
+}

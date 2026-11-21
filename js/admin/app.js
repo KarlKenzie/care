@@ -214,7 +214,7 @@
     else if (CARE.admin.views[S.view]) html = CARE.admin.views[S.view]();
     else html = viewDashboard();
 
-    if (S.dark) document.documentElement.setAttribute('data-theme', 'dark');
+    if (S.dark && S.me) document.documentElement.setAttribute('data-theme', 'dark');
     else document.documentElement.removeAttribute('data-theme');
 
     // Ipabilin ang scroll sa content kung mag-render pag-usab sa parehas nga screen
