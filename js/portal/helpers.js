@@ -28,7 +28,7 @@ function statusClass(st){ return st==='Pending Clinic Review'?'pend':(st==='Revi
 function kv(k,v,mono){ return '<div class="kv"><div class="k">'+esc(k)+'</div><div class="v'+(mono?' mono':'')+'">'+
   esc(v)+'</div></div>'; }
 function applyTheme(){
-  if(S.dark) document.documentElement.setAttribute('data-theme','dark');
+   if(S.dark && S.role) document.documentElement.setAttribute('data-theme','dark');
   else document.documentElement.removeAttribute('data-theme');
 }
 
